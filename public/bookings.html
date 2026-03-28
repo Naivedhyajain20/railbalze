@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RailBlaze - Bookings</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <nav>
+    <a class="nav-brand" href="/"><span>🚂</span> RailBlaze</a>
+    <div class="nav-links">
+      <a href="/">Dashboard</a>
+      <a href="/bookings.html" class="active">Bookings</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Booking Management</h1>
+
+    <div class="section-card">
+      <h2>➕ Create New Booking</h2>
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="scheduleSelect">Schedule</label>
+          <select id="scheduleSelect" required>
+            <option value="">Select a schedule...</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="userId">User ID</label>
+            <input type="text" id="userId" placeholder="e.g. user-001" required />
+          </div>
+          <div class="form-group">
+            <label for="passengerName">Passenger Name</label>
+            <input type="text" id="passengerName" placeholder="Full name" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="seatNumber">Seat Number</label>
+            <input type="text" id="seatNumber" placeholder="e.g. A1" required />
+          </div>
+          <div class="form-group">
+            <label for="seatClass">Class</label>
+            <select id="seatClass" required>
+              <option value="">Select class...</option>
+              <option value="first">First Class</option>
+              <option value="second">Second Class</option>
+              <option value="sleeper">Sleeper</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="price">Price (₹)</label>
+          <input type="number" id="price" placeholder="e.g. 1200" min="0" required />
+        </div>
+        <div id="bookingError" class="error-msg"></div>
+        <button type="submit" class="btn btn-primary">✅ Book Ticket</button>
+      </form>
+    </div>
+
+    <div class="section-card">
+      <h2>📋 All Bookings</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Booking ID</th>
+              <th>Passenger</th>
+              <th>Schedule</th>
+              <th>Class</th>
+              <th>Price</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="bookingsTableBody">
+            <tr><td colspan="7" class="loading">Loading bookings...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
