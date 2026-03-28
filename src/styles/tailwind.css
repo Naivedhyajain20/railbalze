@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --color-background: #F8FAFC; /* slate-50 */
+    --color-foreground: #0F172A; /* slate-900 */
+    --color-border: #E2E8F0; /* slate-200 */
+    --color-input: #FFFFFF; /* white */
+    --color-ring: #0EA5E9; /* sky-500 */
+    
+    /* Card Colors */
+    --color-card: #FFFFFF; /* white */
+    --color-card-foreground: #0F172A; /* slate-900 */
+    
+    /* Popover Colors */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #0F172A; /* slate-900 */
+    
+    /* Muted Colors */
+    --color-muted: #F1F5F9; /* slate-100 */
+    --color-muted-foreground: #475569; /* slate-600 */
+    
+    /* Primary Colors */
+    --color-primary: #1E40AF; /* blue-800 */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #64748B; /* slate-500 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #0EA5E9; /* sky-500 */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* Status Colors */
+    --color-success: #059669; /* emerald-600 */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    --color-warning: #D97706; /* amber-600 */
+    --color-warning-foreground: #FFFFFF; /* white */
+    
+    --color-error: #DC2626; /* red-600 */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    --color-destructive: #DC2626; /* red-600 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Railway Specific Colors */
+    --color-railway-safe: #059669; /* emerald-600 */
+    --color-railway-caution: #D97706; /* amber-600 */
+    --color-railway-danger: #DC2626; /* red-600 */
+    
+    /* Surface Colors */
+    --color-surface: #FFFFFF; /* white */
+    --color-surface-foreground: #0F172A; /* slate-900 */
+    
+    /* Text Colors */
+    --color-text-primary: #0F172A; /* slate-900 */
+    --color-text-secondary: #475569; /* slate-600 */
+    
+    /* Shadow Variables */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-default: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-default: 6px;
+    --radius-lg: 8px;
+    --radius-xl: 12px;
+    
+    /* Animation Durations */
+    --duration-fast: 150ms;
+    --duration-normal: 200ms;
+    --duration-slow: 300ms;
+    --duration-slower: 400ms;
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Typography Base Styles */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-inter font-medium tracking-tight;
+  }
+  
+  /* Data Display Typography */
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  /* Glassmorphism Base */
+  .glass {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Railway Status Indicators */
+  .status-safe {
+    @apply bg-railway-safe text-railway-safe-foreground;
+  }
+  
+  .status-caution {
+    @apply bg-railway-caution text-railway-caution-foreground;
+  }
+  
+  .status-danger {
+    @apply bg-railway-danger text-railway-danger-foreground;
+  }
+  
+  /* Pulse Animation for Critical Alerts */
+  @keyframes status-pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+  
+  .pulse-alert {
+    animation: status-pulse 2s ease-in-out infinite;
+  }
+  
+  /* Shimmer Loading Animation */
+  @keyframes shimmer {
+    0% {
+      background-position: -200px 0;
+    }
+    100% {
+      background-position: calc(200px + 100%) 0;
+    }
+  }
+  
+  .shimmer {
+    background: linear-gradient(90deg, #f0f0f0 0px, #e0e0e0 40px, #f0f0f0 80px);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+  
+  /* Focus Styles for Accessibility */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+  
+  /* Smooth Transitions */
+  .transition-smooth {
+    transition: all var(--duration-normal) cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Hover Scale Effect */
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-[1.02];
+  }
+}
+
+@layer components {
+  /* Navigation Components */
+  .nav-primary {
+    @apply fixed top-0 left-0 right-0 z-[1000] bg-surface border-b border-border;
+    height: 64px;
+  }
+  
+  .nav-sidebar {
+    @apply fixed left-0 top-16 bottom-0 z-[900] bg-surface border-r border-border;
+    width: 300px;
+    transition: transform var(--duration-slow) cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .nav-sidebar.collapsed {
+    transform: translateX(-240px);
+    width: 60px;
+  }
+  
+  /* Content Layout */
+  .main-content {
+    @apply pt-16 transition-all duration-300;
+    margin-left: 300px;
+  }
+  
+  .main-content.sidebar-collapsed {
+    margin-left: 60px;
+  }
+  
+  /* Card Components */
+  .card-glass {
+    @apply glass rounded-lg shadow-md;
+  }
+  
+  /* Button Variants */
+.btn-railway-safe  {
+    @apply bg-railway-safe text-white;
+  }
+.btn-railway-caution  {
+    @apply bg-railway-caution text-white;
+  }
+.btn-railway-danger  {
+    @apply bg-railway-danger text-white;
+  }
+  
+  /* Status Indicators */
+  .indicator-dot {
+    @apply w-2 h-2 rounded-full;
+  }
+  
+  .indicator-safe {
+    @apply bg-railway-safe;
+  }
+  
+  .indicator-caution {
+    @apply bg-railway-caution;
+  }
+  
+  .indicator-danger {
+    @apply bg-railway-danger;
+  }
+}
+
+@layer utilities {
+  /* Responsive Navigation Utilities */
+  @media (max-width: 768px) {
+    .nav-sidebar {
+      transform: translateX(-100%);
+    }
+    
+    .nav-sidebar.mobile-open {
+      transform: translateX(0);
+    }
+    
+    .main-content {
+      margin-left: 0;
+    }
+  }
+  
+  /* Text Utilities */
+  .text-data {
+    @apply font-mono text-sm tracking-wide;
+  }
+  
+  /* Animation Utilities */
+  .animate-fade-in {
+    animation: fadeIn var(--duration-normal) ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Progressive Disclosure */
+  .expand-height {
+    transition: height var(--duration-slow) ease-out;
+  }
+  
+  /* Contextual Tooltip */
+  .tooltip-enter {
+    animation: tooltipEnter var(--duration-fast) ease-out;
+  }
+  
+  @keyframes tooltipEnter {
+    from {
+      opacity: 0;
+      transform: scale(0.95) translateY(2px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+}

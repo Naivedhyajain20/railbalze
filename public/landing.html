@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RailBlaze - AI-Powered Railway Traffic Control</title>
+    <link rel="stylesheet" href="landing.css" />
+</head>
+<body>
+    <header>
+        <img src="logo.jpg" alt="RailBlaze Logo" class="logo">
+        <a href="#signin" class="sign-in-button">Sign In</a>
+        <h1>RailBlaze</h1>
+        <p>AI-Powered Railway Traffic Control</p>
+        <p>
+        <h3>Experience next-generation railway traffic management with RailBlaze. Maximize section throughput through intelligent AI-powered decision support, real-time optimization, and seamless integration with existing railway systems.</h3>
+        <h3>Transform your railway operations with data-driven insights and automated conflict resolution.</h3>
+        </p>
+        <a href="/main-dashboard" class="cta-button">Launch Dashboard</a>
+    </header>
+    
+    <section class="features">
+        <h2>Core System Features</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <img src="real-time-optimization.jpg" alt="Real-time Optimization">
+                <h3>Real-time Optimization</h3>
+                <p>AI-powered scheduling with MILP and RL algorithms.</p>
+            </div>
+            <div class="feature-card">
+                <img src="decision-support.jpg" alt="Decision Support">
+                <h3>Decision Support Dashboard</h3>
+                <p>Controller-friendly interface with recommendations.</p>
+            </div>
+            <div class="feature-card">
+                <img src="simulation.jpg" alt="Digital Twin">
+                <h3>Digital Twin Simulation</h3>
+                <p>What-if analysis and scenario testing.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="optimization">
+        <h2>Optimization Engine Capabilities</h2>
+        <img class="inline-img" src="optimization-engine.jpg" alt="Optimization Engine">
+        <ul>
+            <li><strong>Constraint Modeling:</strong> Track capacity, train priorities, and safety rules.</li>
+            <li><strong>Dynamic Re-optimization:</strong> Adapts to real-time disruptions and delays.</li>
+            <li><strong>Multi-objective Solutions:</strong> Maximize throughput while minimizing delays.</li>
+        </ul>
+    </section>
+
+    <section class="integration">
+        <h2>System Integration</h2>
+        <img class="inline-img" src="system-integration.jpg" alt="System Integration">
+        <ol>
+            <li><strong>Train Management Systems</strong> — seamless TMS connectivity.</li>
+            <li><strong>Signaling Integration</strong> — real-time signal data processing.</li>
+            <li><strong>Historical Data Analysis</strong> — pattern recognition and learning.</li>
+            <li><strong>External APIs</strong> — weather, maintenance, and emergency data.</li>
+        </ol>
+    </section>
+
+    <!-- <section class="data">
+        <h2>Data Management</h2>
+        <ul>
+            <li><strong>Real-time Processing:</strong> Live train positions and status updates.</li>
+            <li><strong>Multi-source Integration:</strong> GPS, signals, schedules, and priorities.</li>
+            <li><strong>Secure Storage:</strong> PostgreSQL and InfluxDB for reliable data handling.</li>
+        </ul>
+    </section>
+
+    <section class="technology">
+        <h2>Technology Stack</h2>
+        <ul>
+            <li><strong>AI/ML Frameworks:</strong> TensorFlow, PyTorch for reinforcement learning.</li>
+            <li><strong>Optimization Tools:</strong> OR-Tools, Pyomo for mathematical modeling.</li>
+            <li><strong>Real-time Systems:</strong> Apache Kafka, Redis for high-performance processing.</li>
+        </ul>
+    </section> -->
+
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <details>
+            <summary>How does RailBlaze integrate with existing railway systems?</summary>
+            <p>RailBlaze connects via secure APIs with TMS, signaling systems, and scheduling databases.</p>
+        </details>
+        <details>
+            <summary>What safety measures are implemented?</summary>
+            <p>Multi-layer safety validation with fail-safe mechanisms and human oversight capabilities.</p>
+        </details>
+        <details>
+            <summary>Can the system handle real-time disruptions?</summary>
+            <p>Yes, dynamic re-optimization algorithms adapt schedules within seconds of disruption detection.</p>
+        </details>
+        <details>
+            <summary>What training is required for traffic controllers?</summary>
+            <p>Comprehensive training program with simulation-based learning and gradual system adoption.</p>
+        </details>
+    </section>
+
+    <section class="cta" id="demo">
+        <h2>Request RailBlaze Demo</h2>
+        <p>Experience the future of railway traffic control. Schedule a demo to see how RailBlaze can transform your operations.</p>
+        <button onclick="alert('Demo request submitted!')">Request Demo</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 RailBlaze. Revolutionizing Railway Traffic Control.</p>
+    </footer>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Sign In</h2>
+            <form id="authForm">
+                <input type="text" id="username" placeholder="Username" required />
+                <input type="email" id="email" placeholder="Email" style="display: none;" />
+                <input type="password" id="password" placeholder="Password" required />
+                <button type="submit" id="submitBtn">Sign In</button>
+                <p class="toggle-text">
+                    Don't have an account? <a href="#" id="toggleLink">Sign Up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script src="landing.js"></script>
+</body>
+</html>

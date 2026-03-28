@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/landing.html" },
+    { "source": "/main-dashboard", "destination": "/index.html" },
+    { "source": "/analytics-and-kpi-dashboard", "destination": "/index.html" },
+    { "source": "/system-administration-settings", "destination": "/index.html" },
+    { "source": "/what-if-simulation-interface", "destination": "/index.html" },
+    { "source": "/login-modal", "destination": "/index.html" },
+    { "source": "/train-detail-view", "destination": "/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
