@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const rateLimit = require('express-rate-limit');
 
 const trainRoutes = require('./routes/trains');
 const routeRoutes = require('./routes/routes');
@@ -20,7 +21,9 @@ app.use('/api/schedules', scheduleRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/insights', insightRoutes);
 
-app.get('/', (req, res) => {
+const pageRateLimit = rateLimit({ windowMs: 60 * 1000, max: 100 });
+
+app.get('/', pageRateLimit, (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
